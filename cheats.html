@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TextQuest Cheat Console</title>
+<style>
+body { background: #0f0f0f; color: #e8e8e8; font-family: monospace; padding: 1rem; }
+#log { height: 300px; overflow-y: auto; background: #111; padding: 1rem; border: 1px solid #333; margin-bottom: 1rem; }
+#cmd { width: 100%; padding: 0.5rem; background: #222; color: #fff; border: 1px solid #555; }
+</style>
+</head>
+<body>
+<h1>🧪 TextQuest Developer Console</h1>
+<pre id="log"></pre>
+<input id="cmd" placeholder="Enter cheat command…" />
+
+<script>
+const logEl = document.getElementById('log');
+const input = document.getElementById('cmd');
+const log = msg => { logEl.textContent += msg + '\n'; logEl.scrollTop = logEl.scrollHeight; };
+const set = (k,v) => localStorage.setItem(k, JSON.stringify(v));
+
+input.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    const line = input.value.trim();
+    log('> ' + line);
+    const parts = line.split(/\s+/);
+    const cmd = parts[0].toLowerCase();
+    const arg = parts.slice(1).join(' ');
+    const game = JSON.parse(localStorage.getItem('textquest_save') || '{}');
+
+    switch (cmd) {
+      case 'god':
+        game.god = !game.god;
+        log(game.god ? 'GOD MODE ENABLED' : 'God mode disabled');
+        break;
+      case 'healme':
+        game.hp = game.maxHp || 99;
+        log('Healed to full HP.');
+        break;
+      case 'xp':
+        game.xp = (game.xp || 0) + parseInt(arg || '100');
+        log('Added XP.');
+        break;
+      case 'gold':
+        game.gold = (game.gold || 0) + parseInt(arg || '100');
+        log('Gold increased.');
+        break;
+      case 'give':
+        if (arg === 'all') {
+          game.inv = Array.from(new Set((game.inv || []).concat(['Iron_Broadsword', 'Potion_Healing', 'Crystal_Staff'])));
+          log('All major items added.');
+        }
+        break;
+      case 'teleport':
+        game.zone = arg;
+        log('Teleported to ' + arg);
+        break;
+      case 'reset':
+        localStorage.removeItem('textquest_save');
+        log('Game progress reset.');
+        break;
+      default:
+        log('Unknown command.');
+    }
+    set('textquest_save', game);
+    input.value = '';
+  }
+});
+</script>
+</body>
+</html>
