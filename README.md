@@ -1,1 +1,1 @@
-Playable demo build with basic look/move/combat, cheat console.
+TextQuest v7 Multi-Page version with return buttons and cheats page.
