@@ -1,1 +1,1 @@
-TextQuest v7 update — Command line removed from main UI. Cheat console available via cheats.html.
+TextQuest v7 button-only build + cheat console.

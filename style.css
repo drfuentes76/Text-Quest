@@ -1,16 +1,12 @@
-:root{--accent:#0099ff;--bg:#0f0f0f;--text:#e8e8e8;--bar:#33cc33;--bar-blue:#3388ff;--bar-purple:#8844ff;}
+:root{--accent:#0099ff;--bg:#0f0f0f;--text:#e8e8e8;--bar:#33cc33;--blue:#3388ff;--purple:#8844ff;}
 *{box-sizing:border-box;font-family:monospace;}
 body{margin:0;background:var(--bg);color:var(--text);}
-#create-screen,#game-screen{display:flex;flex-direction:column;align-items:center;gap:0.5rem;padding:1rem;}
-#class-buttons button,#actions button,#npc-buttons button,#spell-buttons button{margin:0.2rem;padding:0.4rem 0.7rem;background:#222;border:1px solid #555;color:var(--text);cursor:pointer;}
+#create-screen,#game-screen{display:flex;flex-direction:column;align-items:center;gap:0.6rem;padding:1rem;}
+#class-buttons button,#actions button,#npc-buttons button,#spell-buttons button{margin:0.2rem;padding:0.4rem 0.8rem;background:#222;border:1px solid #555;color:var(--text);}
 #class-buttons button.active{background:var(--accent);}
-.bar-wrap{display:flex;align-items:center;gap:0.3rem;width:140px;}
-.bar{height:0.8rem;background:var(--bar);flex:1;transition:width 0.2s;}
-.bar.blue{background:var(--bar-blue);}
-.bar.purple{background:var(--bar-purple);}
-header#hud{display:flex;flex-wrap:wrap;gap:0.6rem;align-items:center;margin-bottom:0.5rem;}
-#weapon-label,#companion-label{font-weight:bold;}
-#game{width:100%;max-width:600px;height:50vh;overflow-y:auto;border:1px solid #333;padding:0.5rem;margin-bottom:0.5rem;background:#111;}
+header#hud{display:flex;flex-wrap:wrap;gap:0.6rem;align-items:center;margin-bottom:0.4rem;}
+.bar-wrap{display:flex;align-items:center;gap:0.25rem;width:140px;}
+.bar{height:0.8rem;background:var(--bar);flex:1;transition:width .2s;}
+.bar.blue{background:var(--blue);} .bar.purple{background:var(--purple);}
+#game{width:100%;max-width:600px;height:52vh;overflow-y:auto;background:#111;padding:0.5rem;border:1px solid #333;}
 .flex-wrap{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:0.4rem;}
-#command-form{width:100%;max-width:600px;display:flex;}
-#command-input{flex:1;padding:0.4rem;border:1px solid #555;background:#222;color:var(--text);}
