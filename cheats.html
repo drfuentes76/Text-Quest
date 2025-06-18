@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><title>Cheat Console</title></head><body>
 <h2>Cheat Console</h2><pre id="log"></pre><input id="cmd" placeholder="cheat command"><script>
-const log=(t)=>{document.getElementById('log').textContent+=t+'\n';};
+const log=t=>document.getElementById('log').textContent+=t+'\n';
 document.getElementById('cmd').addEventListener('keydown',e=>{if(e.key==='Enter'){log('> '+e.target.value);e.target.value='';}});
 </script></body></html>

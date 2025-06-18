@@ -1,12 +1,12 @@
-:root{--accent:#0099ff;--bg:#0f0f0f;--text:#e8e8e8;--bar:#33cc33;--blue:#3388ff;--purple:#8844ff;}
+:root{--bg:#0f0f0f;--text:#e8e8e8;--bar:#33cc33;--blue:#3388ff;--purple:#8844ff;}
 *{box-sizing:border-box;font-family:monospace;}
 body{margin:0;background:var(--bg);color:var(--text);}
-#create-screen,#game-screen{display:flex;flex-direction:column;align-items:center;gap:0.6rem;padding:1rem;}
-#class-buttons button,#actions button,#npc-buttons button,#spell-buttons button{margin:0.2rem;padding:0.4rem 0.8rem;background:#222;border:1px solid #555;color:var(--text);}
-#class-buttons button.active{background:var(--accent);}
-header#hud{display:flex;flex-wrap:wrap;gap:0.6rem;align-items:center;margin-bottom:0.4rem;}
-.bar-wrap{display:flex;align-items:center;gap:0.25rem;width:140px;}
-.bar{height:0.8rem;background:var(--bar);flex:1;transition:width .2s;}
+#create-screen,#game-screen{display:flex;flex-direction:column;align-items:center;gap:.6rem;padding:1rem;}
+#class-buttons button,#actions button,#npc-buttons button,#spell-buttons button{margin:.2rem;padding:.4rem .8rem;background:#222;border:1px solid #555;color:var(--text);}
+#class-buttons button.active{background:#0099ff;}
+header#hud{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin-bottom:.4rem;}
+.bar-wrap{display:flex;align-items:center;gap:.25rem;width:140px;}
+.bar{height:.8rem;background:var(--bar);flex:1;transition:width .2s;}
 .bar.blue{background:var(--blue);} .bar.purple{background:var(--purple);}
-#game{width:100%;max-width:600px;height:52vh;overflow-y:auto;background:#111;padding:0.5rem;border:1px solid #333;}
-.flex-wrap{display:flex;flex-wrap:wrap;gap:0.3rem;margin-bottom:0.4rem;}
+#game{width:100%;max-width:600px;height:52vh;overflow-y:auto;background:#111;padding:.5rem;border:1px solid #333;}
+.flex-wrap{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:.4rem;}

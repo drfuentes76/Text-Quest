@@ -1,58 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>TextQuest v7</title>
-<link rel="stylesheet" href="style.css"/>
-</head>
-<body>
-<!-- Character creation -->
+<link rel="stylesheet" href="style.css"/></head><body>
+
 <section id="create-screen">
-  <h1>TextQuest v7</h1>
-  <p>Enter your hero’s name and pick a class:</p>
-  <input id="hero-name" type="text" placeholder="Hero name…" />
-  <div id="class-buttons">
-    <button type="button" data-class="warrior">Warrior</button>
-    <button type="button" data-class="cleric">Cleric</button>
-    <button type="button" data-class="wizard">Wizard</button>
-  </div>
-  <button type="button" id="start-btn" disabled>Start Adventure</button>
+<h1>TextQuest v7</h1>
+<p>Enter your hero’s name and pick a class:</p>
+<input id="hero-name" type="text" placeholder="Hero name…"/>
+<div id="class-buttons">
+<button type="button" data-class="warrior">Warrior</button>
+<button type="button" data-class="cleric">Cleric</button>
+<button type="button" data-class="wizard">Wizard</button>
+</div>
+<button type="button" id="start-btn" disabled>Start Adventure</button>
 </section>
 
-<!-- Game UI -->
 <section id="game-screen" hidden>
-  <header id="hud">
-    <div id="time-label"></div>
-    <div class="bar-wrap"><span>HP</span><div id="hp-bar" class="bar"></div></div>
-    <div class="bar-wrap"><span>MP</span><div id="mp-bar" class="bar blue"></div></div>
-    <div class="bar-wrap"><span>XP</span><div id="xp-bar" class="bar purple"></div></div>
-    <div id="weapon-label"></div>
-    <div id="companion-label"></div>
-  </header>
+<header id="hud">
+  <div id="time-label"></div>
+  <div class="bar-wrap"><span>HP</span><div id="hp-bar" class="bar"></div></div>
+  <div class="bar-wrap"><span>MP</span><div id="mp-bar" class="bar blue"></div></div>
+  <div class="bar-wrap"><span>XP</span><div id="xp-bar" class="bar purple"></div></div>
+  <div id="weapon-label"></div>
+  <div id="companion-label"></div>
+</header>
 
-  <header id="actions">
-    <button data-cmd="look">Look</button>
-    <button data-cmd="inventory">Inventory</button>
-    <button data-cmd="equip best">Equip Best</button>
-    <button data-cmd="unequip">Unequip</button>
-    <button data-cmd="use potion">Use Potion</button>
-    <button data-cmd="rest">Rest</button>
-    <button data-cmd="forge">Forge</button>
-    <button data-cmd="shop">Shop</button>
-    <button data-cmd="go north">N</button>
-    <button data-cmd="go south">S</button>
-    <button data-cmd="go east">E</button>
-    <button data-cmd="go west">W</button>
-    <button data-cmd="help">Help</button>
-  </header>
+<header id="actions">
+  <button data-cmd="look">Look</button><button data-cmd="inventory">Inventory</button>
+  <button data-cmd="equip best">Equip Best</button><button data-cmd="unequip">Unequip</button>
+  <button data-cmd="use potion">Use Potion</button><button data-cmd="rest">Rest</button>
+  <button data-cmd="forge">Forge</button><button data-cmd="shop">Shop</button>
+  <button data-cmd="go north">N</button><button data-cmd="go south">S</button>
+  <button data-cmd="go east">E</button><button data-cmd="go west">W</button>
+  <button data-cmd="help">Help</button>
+</header>
 
-  <div id="spell-buttons" class="flex-wrap"></div>
-  <div id="npc-buttons" class="flex-wrap"></div>
-
-  <main id="game" aria-live="polite"><pre id="output"></pre></main>
+<div id="spell-buttons" class="flex-wrap"></div>
+<div id="npc-buttons" class="flex-wrap"></div>
+<main id="game"><pre id="output"></pre></main>
 </section>
 
-<script src="game.js"></script>
-</body>
-</html>
+<script src="game.js"></script></body></html>
