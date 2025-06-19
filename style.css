@@ -1,3 +1,4 @@
-body { background: #111; color: #eee; font-family: monospace; text-align: center; padding: 2rem; }
-button { background: #333; color: #fff; border: 1px solid #555; padding: 0.6rem 1.2rem; margin: 0.3rem; cursor: pointer; }
-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+body{background:#111;color:#eee;font-family:monospace;text-align:center;padding:1rem}
+button{margin:.3rem;padding:.5rem 1rem;background:#333;color:#fff;border:1px solid #555}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem}
+table{margin:auto;border-collapse:collapse}td,th{border:1px solid #666;padding:.4rem}
