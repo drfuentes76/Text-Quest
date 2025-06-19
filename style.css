@@ -2,6 +2,4 @@
 *{box-sizing:border-box;font-family:monospace;}
 body{background:var(--bg);color:var(--fg);margin:0;padding:1rem;text-align:center;}
 button{margin:.2rem;padding:.5rem 1rem;background:var(--btn);border:1px solid var(--border);color:var(--fg);}
-nav, .row{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem;}
-#hud{margin:.4rem;font-weight:bold;}
-table{margin:auto;border-collapse:collapse;}td,th{border:1px solid var(--border);padding:.3rem;}
+nav,.row{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem;margin:.4rem;}#hud{margin:.4rem;font-weight:bold;}
