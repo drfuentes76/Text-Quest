@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Create Hero</title>
+<link rel='stylesheet' href='style.css'></head><body>
+<h2>Create Your Hero</h2>
+<input id='name' placeholder='Name'><br>
+<div class='row'>
+<button data-cls='warrior'>Warrior</button>
+<button data-cls='cleric'>Cleric</button>
+<button data-cls='wizard'>Wizard</button>
+</div>
+<button id='start' disabled>Start Adventure</button>
+<script>
+let cls='';
+document.querySelectorAll('[data-cls]').forEach(b=>b.onclick=()=>{cls=b.dataset.cls;document.querySelectorAll('[data-cls]').forEach(x=>x.style.outline='none');b.style.outline='2px solid #0f0';chk();});
+document.getElementById('name').oninput=chk;
+function chk(){document.getElementById('start').disabled=!document.getElementById('name').value.trim()||!cls;}
+document.getElementById('start').onclick=()=>{
+ localStorage.tq7_save='';
+ const s={name:document.getElementById('name').value.trim(),cls:cls};
+ localStorage.tq7_setup=JSON.stringify(s);
+ location.href='index.html';
+};
+</script></body></html>
