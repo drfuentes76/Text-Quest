@@ -1,5 +1,6 @@
-:root{--bg:#111;--fg:#eee;--btn:#333;--border:#555;}
+:root{--bg:#111;--fg:#eee;--btn:#333;--br:#555;}
 *{box-sizing:border-box;font-family:monospace;}
 body{background:var(--bg);color:var(--fg);margin:0;padding:1rem;text-align:center;}
-button{margin:.2rem;padding:.5rem 1rem;background:var(--btn);border:1px solid var(--border);color:var(--fg);}
-nav,.row{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem;margin:.4rem;}#hud{margin:.4rem;font-weight:bold;}
+button{background:var(--btn);color:var(--fg);border:1px solid var(--br);margin:.2rem;padding:.4rem .8rem;cursor:pointer;}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin:.4rem;}
+#hud{margin:.4rem;font-weight:bold;}

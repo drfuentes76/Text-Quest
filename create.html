@@ -1,17 +1,22 @@
-
 <!DOCTYPE html><html><head><meta charset="utf-8"><title>Create Hero</title>
-<link rel="stylesheet" href="style.css"></head><body><h2>Create Hero</h2>
-<input id="name" placeholder="Name"><br>
-<div class="row">
-<button data-cls="warrior">Warrior</button><button data-cls="cleric">Cleric</button>
-<button data-cls="wizard">Wizard</button><button data-cls="thief">Thief</button>
+<link rel=stylesheet href=style.css></head><body>
+<h2>Create Hero</h2><input id=name placeholder="Name">
+<div id=classes>
+<button data-cls=warrior>Warrior</button>
+<button data-cls=wizard>Wizard</button>
+<button data-cls=cleric>Cleric</button>
+<button data-cls=thief>Thief</button>
 </div>
-<button id="start" disabled>Start</button>
+<button id=start disabled>Start</button>
 <script>
-let cls='';const nameBox=document.getElementById('name'), start=document.getElementById('start');
-document.querySelectorAll('[data-cls]').forEach(btn=>btn.onclick=()=>{cls=btn.dataset.cls;
-  document.querySelectorAll('[data-cls]').forEach(b=>b.classList.toggle('active',b===btn));check();});
+let cls='';
+const nameBox=document.getElementById('name'), startBtn=document.getElementById('start');
+document.querySelectorAll('[data-cls]').forEach(b=>b.onclick=()=>{cls=b.dataset.cls;
+  document.querySelectorAll('[data-cls]').forEach(x=>x.classList.toggle('active',x===b));
+  check();});
 nameBox.oninput=check;
-function check(){start.disabled=!(nameBox.value.trim()&&cls);}
-start.onclick=()=>{localStorage.clear();localStorage.tq7_setup=JSON.stringify({name:nameBox.value.trim(),cls});location.href='index.html';};
+function check(){startBtn.disabled=!nameBox.value.trim()||!cls;}
+startBtn.onclick=()=>{localStorage.clear();
+ localStorage.tq7_setup=JSON.stringify({name:nameBox.value.trim(),cls});
+ location.href='index.html';};
 </script></body></html>
