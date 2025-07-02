@@ -1,36 +1,7 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>TextQuest</title>
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>TextQuest</title>
 <link rel=stylesheet href=style.css></head><body data-page=world>
-<h1>TextQuest v7</h1><div id=hud></div>
-<div id=desc></div><div id=npcs></div>
-<h3>Quick Travel</h3>
-<div>
-  <h4>North</h4><nav>
-    <button onclick="goTo('Ruins')">Ruins</button>
-  </nav>
-  <h4>East</h4><nav>
-    <button onclick="goTo('Hills')">Hills</button>
-    <button onclick="goTo('Forest')">Forest</button>
-    <button onclick="goTo('Lake')">Lake</button>
-  </nav>
-  <h4>South</h4><nav>
-    <button onclick="goTo('Gate')">Gate</button>
-  </nav>
-  <h4>West</h4><nav>
-    <button onclick="goTo('Shop')">Shop (if added zone)</button>
-  </nav>
-</div>
-
-<nav>
-  <a href=battle.html><button>Battle</button></a>
-  <a href=shop.html><button>Shop</button></a>
-  <a href=forge.html><button>Forge</button></a>
-  <a href=inventory.html><button>Inventory</button></a>
-  <a href=companion.html><button>Companion</button></a>
-  <a href=quests.html><button>Quests</button></a>
-  <a href=cheats.html><button>Cheats</button></a>
-</nav>
+<h1>TextQuest</h1><div id=hud></div><button id=lookBtn>Look</button>
+<div id=desc></div><nav><button id=n>N</button><button id=s>S</button><button id=e>E</button><button id=w>W</button></nav>
+<nav><a href=shop.html><button>Shop</button></a><a href=cheats.html><button>Cheats</button></a></nav>
 <script src=game-core.js></script>
-<script>
-function goTo(zone){ S.zone = zone; save(S); location.reload(); }
-</script>
-</body></html>
+<script>document.getElementById('lookBtn').onclick=look;</script></body></html>

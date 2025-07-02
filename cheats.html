@@ -1,11 +1,13 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>Cheats</title>
-<link rel=stylesheet href=style.css></head><body>
-<h2>Cheat Console</h2><div id=hud></div>
-<input id=cmd placeholder="type cheat"><button id=run>Enter</button>
+<!DOCTYPE html><html><head><meta charset='utf-8'><title>Cheats</title>
+<link rel=stylesheet href=style.css></head><body data-page=cheats>
+<h2>Cheat Console</h2><input id=cmd><button onclick="cheat()">Enter</button>
+<div id=log></div><a href=index.html><button>Home</button></a>
 <script src=game-core.js></script>
 <script>
-const box=document.getElementById('cmd'), run=document.getElementById('run');
-function exec(){if(box.value.trim()){cheatsExec(box.value.trim());box.value='';}}
-run.onclick=exec; box.addEventListener('keydown',e=>{if(e.key==='Enter')exec();});
-</script>
-<a href=index.html><button>Home</button></a></body></html>
+function cheat(){
+ const c=document.getElementById('cmd').value.trim();
+ document.getElementById('log').textContent='Executed: '+c;
+ if(c==='god mode'){alert('God Mode Enabled');}
+ if(c==='duplicate item'){alert('Duplicated items in inventory.');}
+}
+</script></body></html>

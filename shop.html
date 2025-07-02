@@ -1,38 +1,4 @@
 <!DOCTYPE html><html><head><meta charset='utf-8'><title>Shop</title>
 <link rel=stylesheet href=style.css></head><body data-page=shop>
-<h2>Shop</h2><div id=hud></div><div id=desc></div><div id=shopList></div>
-<a href=index.html><button>Home</button></a>
-<script src=game-core.js></script>
-<script>
-const itemsByZone = {
- "Hills": ["Steel Sword", "Iron Armor", "Potion"],
- "Forest": ["Elven Cloak", "Dagger of Speed", "Mana Leaf"],
- "Lake": ["Trident", "Water Crystal", "Bubble Shield"],
- "Ruins": ["Bone Axe", "Ghost Silk", "Cursed Ring"]
-};
-const itemData = {
- "Steel Sword": {price:30}, "Iron Armor":{price:40}, "Potion":{price:10},
- "Elven Cloak":{price:55}, "Dagger of Speed":{price:45}, "Mana Leaf":{price:20},
- "Trident":{price:50}, "Water Crystal":{price:35}, "Bubble Shield":{price:60},
- "Bone Axe":{price:42}, "Ghost Silk":{price:65}, "Cursed Ring":{price:25}
-};
-const zone = S.zone;
-const list = document.getElementById("shopList");
-const desc = document.getElementById("desc");
-desc.textContent = "You enter a shop in the " + zone + ".";
-
-(itemsByZone[zone]||[]).forEach(item=>{
-  const row = document.createElement("div");
-  const btn = document.createElement("button");
-  btn.textContent = `Buy ${item} (${itemData[item].price}g)`;
-  btn.onclick = ()=>{
-    if(S.gold >= itemData[item].price){
-      S.gold -= itemData[item].price;
-      (S.inv=S.inv||[]).push(item);
-      save(S); alert(`You purchased ${item}!`);
-      hud();
-    } else alert("Not enough gold!");
-  };
-  row.appendChild(btn); list.appendChild(row);
-});
-</script></body></html>
+<h2>Shop</h2><div id=buy></div><a href=index.html><button>Home</button></a>
+<script src=game-core.js></script></body></html>
